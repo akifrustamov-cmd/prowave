@@ -69,6 +69,8 @@
     try { window.localStorage.setItem(LANG_KEY, currentLang); } catch (error) { /* private mode: the choice simply is not remembered */ }
     updateCalculator();
     updateContactLinks();
+    // The flavour cards and the demo screen listen for this and redraw in the new language.
+    doc.dispatchEvent(new CustomEvent('prowave:lang', { detail: { lang: currentLang } }));
   }
 
   /* ---------- Earnings calculator ---------- */
@@ -210,7 +212,15 @@
     var header = $('#header');
     var sticky = $('#stickyCta');
     var contact = $('#kontakt');
+    var kiosk = $('.kiosk');
     var ticking = false;
+
+    // The sticky button must not cover the demo screen while someone is using it.
+    function kioskInView() {
+      if (!kiosk) return false;
+      var box = kiosk.getBoundingClientRect();
+      return box.top < window.innerHeight * 0.75 && box.bottom > window.innerHeight * 0.4;
+    }
 
     function update() {
       ticking = false;
@@ -219,7 +229,7 @@
       if (!sticky || !contact) return;
       var pastHero = y > window.innerHeight * 0.7;
       var contactInView = contact.getBoundingClientRect().top < window.innerHeight * 0.85;
-      sticky.classList.toggle('is-visible', pastHero && !contactInView);
+      sticky.classList.toggle('is-visible', pastHero && !contactInView && !kioskInView());
     }
 
     window.addEventListener('scroll', function () {
@@ -228,6 +238,44 @@
       window.requestAnimationFrame(update);
     }, { passive: true });
     update();
+  }
+
+  /* ---------- Looping videos ----------
+     Every video sits on top of a poster image. On a slow connection, with data saving on,
+     or when the visitor prefers less motion, the video is never downloaded and the poster stays. */
+  var SLOW_CONNECTIONS = ['slow-2g', '2g', '3g'];
+  var VIDEO_PRELOAD_MARGIN = '300px 0px';
+
+  function videoAllowed() {
+    var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    if (connection && (connection.saveData || SLOW_CONNECTIONS.indexOf(connection.effectiveType) !== -1)) return false;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return false;
+    return true;
+  }
+
+  function playVideo(video) {
+    if (!video.getAttribute('src')) video.src = video.getAttribute('data-src');
+    var started = video.play();
+    if (started && typeof started.catch === 'function') {
+      // Some browsers block autoplay (low power mode, for example). The poster simply stays.
+      started.catch(function () { video.classList.remove('is-playing'); });
+    }
+  }
+
+  function initVideos() {
+    var videos = $all('video[data-src]');
+    if (!videos.length || !videoAllowed() || !('IntersectionObserver' in window)) return;
+    videos.forEach(function (video) {
+      video.muted = true;
+      video.addEventListener('playing', function () { video.classList.add('is-playing'); });
+    });
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) playVideo(entry.target);
+        else if (!entry.target.paused) entry.target.pause();
+      });
+    }, { rootMargin: VIDEO_PRELOAD_MARGIN });
+    videos.forEach(function (video) { observer.observe(video); });
   }
 
   /* ---------- Start ---------- */
@@ -245,6 +293,7 @@
     initForm();
     initReveal();
     initHeaderAndStickyCta();
+    initVideos();
   }
 
   if (doc.readyState === 'loading') doc.addEventListener('DOMContentLoaded', init);

@@ -136,10 +136,10 @@ h3 { font-size: 1.35rem; font-weight: 700; line-height: 1.2; }
 
 /* Hero: text on paper, photo as a framed card */
 .hero { position: relative; display: flex; flex-direction: column; overflow: hidden; background: var(--paper); }
-.hero-inner { order: 1; position: relative; z-index: 1; padding-top: calc(var(--header-h) + 44px); padding-bottom: 36px; }
-.hero-media { order: 2; position: relative; margin: 0 var(--gutter) clamp(40px, 8vw, 72px); border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 3; background: var(--sand); }
-.hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 70% center; }
-.hero--partner .hero-media img { object-position: center; }
+.hero-inner { order: 2; position: relative; z-index: 1; padding-top: 30px; padding-bottom: clamp(44px, 8vw, 72px); }
+.hero-media { order: 1; position: relative; z-index: 1; margin: calc(var(--header-h) + 6px) var(--gutter) 0; border-radius: var(--radius); overflow: hidden; aspect-ratio: 16 / 11; background: var(--sand); }
+.hero-media img, .hero-media video { object-position: 62% center; }
+.hero--partner .hero-media img, .hero--partner .hero-media video { object-position: center; }
 .hero-waves { position: absolute; right: -22%; top: 3%; width: min(90vw, 760px); color: var(--teal); opacity: 0.1; pointer-events: none; }
 .hero-waves path { animation: drift 11s ease-in-out infinite alternate; }
 .hero-waves path:nth-child(2) { animation-delay: -3.5s; }
@@ -151,6 +151,13 @@ h3 { font-size: 1.35rem; font-weight: 700; line-height: 1.2; }
 .hero-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: clamp(36px, 6vw, 56px); padding-top: 22px; border-top: 1px solid var(--line); }
 .hero-facts strong { display: block; font-stretch: 75%; font-weight: 800; font-size: clamp(1.7rem, 5.4vw, 2.6rem); line-height: 1; }
 .hero-facts span { display: block; margin-top: 6px; font-size: 0.82rem; line-height: 1.35; color: var(--muted); }
+
+/* A photo that turns into a short looping video when the connection allows it.
+   The image is the poster and stays visible until the video plays. */
+.media { position: relative; overflow: hidden; }
+.media > img, .media > video { width: 100%; height: 100%; object-fit: cover; }
+.media > video { position: absolute; inset: 0; opacity: 0; transition: opacity 0.7s ease; pointer-events: none; }
+.media > video.is-playing { opacity: 1; }
 
 /* Wave dividers */
 .divider { background: var(--from); line-height: 0; margin-bottom: -1px; }
@@ -180,6 +187,7 @@ h3 { font-size: 1.35rem; font-weight: 700; line-height: 1.2; }
 .teaser p { color: var(--muted); margin-top: 10px; max-width: 52ch; }
 
 .section--sand .teaser { background: var(--paper); }
+.teaser > div > .badge-soon { margin-bottom: 18px; }
 .badge-soon { justify-self: start; display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px; border: 1.5px solid var(--teal); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--navy); white-space: nowrap; }
 
 /* Waves facts and certificates on request */
@@ -208,9 +216,27 @@ h3 { font-size: 1.35rem; font-weight: 700; line-height: 1.2; }
 .spec-list li { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr); gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); }
 .spec-list strong { font-weight: 700; }
 .spec-list span { color: var(--muted); }
-.flavours { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
-.flavour { display: inline-flex; align-items: center; gap: 8px; font-size: 0.92rem; font-weight: 600; padding: 9px 16px; border-radius: 999px; background: var(--paper); }
-.flavour i { width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
+.text-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 26px; font-weight: 700; color: var(--navy); text-decoration: underline; text-decoration-color: var(--teal); text-decoration-thickness: 2px; text-underline-offset: 6px; }
+.text-link .arrow { transition: transform 0.25s var(--ease); }
+.text-link:hover .arrow { transform: translateX(4px); }
+
+/* Gym partner offer near the top of the home page */
+.partner-band .hero-facts { margin-top: 28px; }
+.partner-band p.lead { margin-top: 18px; }
+.partner-band .actions { margin-top: 30px; }
+.partner-band h2 { font-size: clamp(2.1rem, 6.4vw, 4rem); }
+
+/* Big photo with a statement on it */
+.band { padding: 0 0 var(--section); }
+.band-figure { position: relative; margin: 0; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 5; background: var(--navy); }
+.band-figure img { width: 100%; height: 100%; object-fit: cover; object-position: 38% center; }
+.band-figure::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(28, 42, 58, 0) 35%, rgba(28, 42, 58, 0.78) 100%); pointer-events: none; }
+.band-figure figcaption { position: absolute; z-index: 1; left: 22px; right: 22px; bottom: 24px; color: #ffffff; font-stretch: 75%; font-weight: 800; text-transform: uppercase; font-size: clamp(2.3rem, 8.4vw, 5.4rem); line-height: 0.96; }
+.band-figure figcaption span { color: #a9d4de; }
+
+/* Flavour section header: short looping video next to the title */
+.flavour-head { display: grid; gap: 24px; align-items: end; margin-bottom: clamp(30px, 5vw, 56px); }
+.flavour-head .photo { aspect-ratio: 16 / 9; }
 
 /* Source: the one dark section on the home page */
 .source { position: relative; overflow: hidden; }
@@ -235,6 +261,11 @@ h3 { font-size: 1.35rem; font-weight: 700; line-height: 1.2; }
 .why-card .n { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; color: var(--navy); margin-bottom: 14px; }
 .why-card h3 { font-stretch: 75%; font-weight: 800; text-transform: uppercase; font-size: clamp(1.7rem, 4.6vw, 2.2rem); line-height: 1.02; margin-bottom: 12px; }
 .why-card p { color: var(--muted); }
+
+.why-photo { aspect-ratio: 16 / 10; margin-bottom: clamp(28px, 5vw, 56px); }
+.rail-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+.section--start { padding-top: 0; }
+.band-figure--ropes img { object-position: 60% center; }
 
 /* Calculator: the one dark section on the partnership page */
 .calc { display: grid; gap: 22px; }
@@ -345,6 +376,8 @@ input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; border-radius
   .brand img { height: 26px; }
   .hero .actions .btn { flex: 0 0 auto; }
   .hero-media { aspect-ratio: 16 / 9; }
+  .band-figure { aspect-ratio: 16 / 9; }
+  .band-figure figcaption { left: 40px; right: 40px; bottom: 38px; max-width: 14ch; }
   .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .scene { aspect-ratio: 16 / 9; }
   .scene-machine { left: 62%; height: 86%; bottom: 5%; }
@@ -374,8 +407,13 @@ input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; border-radius
   .hero { display: block; min-height: min(100vh, 860px); }
   .hero h1 { font-size: clamp(3.4rem, min(7.2vw, 11vh), 7rem); }
   .hero-inner { padding-top: calc(var(--header-h) + 56px); padding-bottom: 72px; }
-  .hero-inner > * { max-width: 57%; }
-  .hero-media { position: absolute; z-index: 1; top: calc(var(--header-h) + 24px); bottom: 48px; right: max(var(--gutter), calc((100vw - 1240px) / 2 + var(--gutter))); width: min(36vw, 440px); margin: 0; aspect-ratio: auto; }
+  .hero-media { z-index: 1; }
+  .hero-inner > * { max-width: 54%; }
+  .hero-media { position: absolute; z-index: 1; top: calc(var(--header-h) + 24px); bottom: 48px; right: max(var(--gutter), calc((100vw - 1240px) / 2 + var(--gutter))); width: min(40vw, 520px); margin: 0; aspect-ratio: auto; }
+  .band-figure { aspect-ratio: 21 / 9; }
+  .why-photo { aspect-ratio: 21 / 8; }
+  .flavour-head { grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr); gap: 64px; }
+  .split--band { grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr); }
   .hero-waves { right: 18%; top: auto; bottom: -6%; width: 620px; opacity: 0.1; }
   .split { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr); }
   .proof:not(.proof--card) { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr); gap: 80px; align-items: start; }
@@ -398,6 +436,7 @@ input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; border-radius
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .media > video { display: none; }
   *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; transition-delay: 0s !important; }
   .js .reveal { opacity: 1; transform: none; }
   .js .chain-line path { stroke-dashoffset: 0; }

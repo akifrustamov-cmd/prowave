@@ -9,13 +9,15 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="ProWave dla siłowni. Świeże białko w Twoim klubie">
   <meta property="og:description" content="ProWave dla siłowni i sieci fitness. Automat ze świeżym białkiem bez inwestycji i bez dodatkowej pracy, z udziałem w każdym shake'u. Zacznij darmowy pilotaż.">
-  <meta property="og:image" content="../images/hero.jpg">
+  <meta property="og:image" content="../images/og.jpg">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="../assets/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <link rel="preload" href="../fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../fonts/archivo-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../images/gym-poster.webp" as="image" type="image/webp">
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/flavours.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -26,6 +28,7 @@
     <span class="powered">Powered by <strong>Waves</strong></span>
     <nav class="nav" aria-label="Główna nawigacja" data-i18n-attr="aria-label:nav.label">
       <a href="#korzysci" data-i18n="pnav.why">Korzyści</a>
+      <a href="#smaki" data-i18n="nav.flavours">Smaki</a>
       <a href="#kalkulator" data-i18n="nav.calc">Zarobki</a>
       <a href="#start" data-i18n="pnav.start">Jak zaczynamy</a>
       <a href="#kontakt" data-i18n="nav.contact">Kontakt</a>
@@ -42,8 +45,12 @@
 
   <!-- HERO -->
   <section class="hero hero--partner">
-    <!-- PHOTO: images/gym.jpg. Wide gym interior. -->
-    <div class="hero-media"><img src="../images/gym.jpg" alt="" width="1600" height="1067" fetchpriority="high"></div>
+    <!-- SWAP: hero video. Replace video/gym.mp4 (a busy gym, no sound, under 3 MB) and its still image images/gym-poster.webp
+         with footage from a partner club, ideally with the ProWave machine in the frame. -->
+    <div class="hero-media media">
+      <img src="../images/gym-poster.webp" alt="Dwie osoby trenują na rowerkach powietrznych w siłowni" data-i18n-attr="alt:phero.alt" width="1280" height="720" fetchpriority="high" decoding="async">
+      <video muted loop playsinline preload="none" data-src="../video/gym.mp4" aria-hidden="true" tabindex="-1"></video>
+    </div>
     <svg class="hero-waves" viewBox="0 0 123 57" aria-hidden="true">
       <g fill="currentColor" transform="translate(4 1) skewX(-10)">
         <path d="M0 18 C18 22 34 20 48 10 C60 2 78 0 100 12 C82 8 70 10 60 17 C44 28 20 30 0 18 Z"/>
@@ -73,12 +80,12 @@
       <div class="section-head">
         <p class="eyebrow reveal" data-i18n="pscene.eyebrow">ProWave w klubie</p>
         <h2 class="reveal" style="--i:1" data-i18n="pscene.title">Nasza marka w Twojej siłowni</h2>
-        <p class="lead reveal" style="--i:2" data-i18n="pscene.lead">Automat stoi pod marką ProWave i sam przyciąga wzrok po treningu. Klubowicz wybiera smak, a po minucie ma w ręku zimny shake.</p>
+        <p class="lead reveal" style="--i:2" data-i18n="pscene.lead">Automat stoi pod marką ProWave i sam przyciąga wzrok po treningu. Klubowicz wybiera smak, a po minucie ma w ręku zimny shake. Za pojedynczy shake płaci każdą popularną metodą bezgotówkową: kartą, zbliżeniowo albo telefonem.</p>
       </div>
-      <!-- MACHINE SCENE: a drawing of the machine placed over a gym photo.
+      <!-- SWAP: MACHINE SCENE. A drawing of the machine (assets/machine.svg) placed over a gym photo (images/scene-club.webp).
            When you have a real photo of your machine in a gym, replace both images below with that one photo. -->
       <figure class="scene reveal">
-        <img class="scene-bg" src="../images/hero.jpg" alt="" width="1600" height="1067" loading="lazy">
+        <img class="scene-bg" src="../images/scene-club.webp" alt="" width="1600" height="1068" loading="lazy" decoding="async">
         <img class="scene-machine" src="../assets/machine.svg" alt="Automat ProWave w siłowni" data-i18n-attr="alt:scene.alt" width="320" height="640" loading="lazy">
         <figcaption data-i18n="scene.caption">Wizualizacja</figcaption>
       </figure>
@@ -92,6 +99,10 @@
         <p class="eyebrow reveal" data-i18n="why.eyebrow">Dla siłowni</p>
         <h2 class="reveal" style="--i:1" data-i18n="why.title">Ty prowadzisz klub. Resztą zajmiemy się my.</h2>
       </div>
+      <!-- SWAP: images/after-training.webp. A member with a shake after training, landscape, about 1400 px wide. -->
+      <div class="photo why-photo reveal">
+        <img src="../images/after-training.webp" alt="Mężczyzna z shakerem odpoczywa po treningu w siłowni" data-i18n-attr="alt:why.alt" width="1400" height="933" loading="lazy" decoding="async">
+      </div>
       <ul class="why-grid">
         <li class="why-card reveal"><p class="n">01</p><h3 data-i18n="why.c1t">Zero inwestycji</h3><p data-i18n="why.c1p">Automat stawiamy na nasz koszt. Ty wskazujesz miejsce.</p></li>
         <li class="why-card reveal" style="--i:1"><p class="n">02</p><h3 data-i18n="why.c2t">Zero dodatkowej pracy</h3><p data-i18n="why.c2p">Sami uzupełniamy, czyścimy i serwisujemy automat.</p></li>
@@ -99,6 +110,59 @@
         <li class="why-card reveal" style="--i:3"><p class="n">04</p><h3 data-i18n="why.c4t">Zadowoleni klubowicze</h3><p data-i18n="why.c4p">Świeże białko na miejscu to kolejny powód, żeby wracać do Twojego klubu.</p></li>
         <li class="why-card reveal" style="--i:4"><p class="n">05</p><h3 data-i18n="why.c5t">Higiena bez kompromisów</h3><p data-i18n="why.c5p">Automat czyści się sam i spełnia unijne wymogi higieny i bezpieczeństwa.</p></li>
       </ul>
+    </div>
+  </section>
+
+  <div class="divider" style="--from:#e8dfd0;--to:#f6f4ef">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path class="fill" d="M0 50 C240 120 480 100 720 60 S1200 10 1440 70 V120 H0 Z"/><path class="stroke" d="M0 50 C240 120 480 100 720 60 S1200 10 1440 70"/></svg>
+  </div>
+
+  <!-- THE MACHINE SCREEN, smaller version. Drawn by js/demo.js -->
+  <section class="section" id="demo">
+    <div class="container demo-grid demo-grid--compact">
+      <div class="demo-copy">
+        <p class="eyebrow reveal" data-i18n="demo.eyebrow">Ekran automatu</p>
+        <h2 class="reveal" style="--i:1" data-i18n="pdemo.title">To zobaczą Twoi klubowicze</h2>
+        <p class="lead reveal" style="--i:2" data-i18n="pdemo.lead">Prosty ekran, trzy dotknięcia i shake jest gotowy. Sprawdź, jak to wygląda od strony klubowicza.</p>
+      </div>
+      <div class="kiosk kiosk--compact reveal" data-demo data-flavours="vanilla-dream,chocolate-bomb,strawberry-kiss,cookie-crunch,mango-smoothie,neon-night-drive">
+        <div class="kiosk-frame">
+          <div class="kiosk-bar">
+            <img src="../assets/logo.svg" alt="ProWave" width="113" height="15" loading="lazy">
+            <ol class="kiosk-dots" aria-hidden="true"><li></li><li></li><li></li><li></li></ol>
+          </div>
+          <div class="kiosk-screen" role="group"><noscript>Ten pokaz działa po włączeniu JavaScript.</noscript></div>
+        </div>
+        <p class="kiosk-caption" data-i18n="demo.caption">To pokaz. W automacie shake powstaje w około minutę.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" style="--from:#f6f4ef;--to:#e8dfd0">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path class="fill" d="M0 70 C240 10 480 10 720 60 S1200 120 1440 50 V120 H0 Z"/><path class="stroke" d="M0 70 C240 10 480 10 720 60 S1200 120 1440 50"/></svg>
+  </div>
+
+  <!-- FLAVOURS, shorter version. The cards are drawn from the list in js/flavours.js -->
+  <section class="section section--sand" id="smaki">
+    <div class="container">
+      <div class="section-head rail-head">
+        <div>
+          <p class="eyebrow reveal" data-i18n="flav.eyebrow">Smaki</p>
+          <h2 class="reveal" style="--i:1" data-i18n="pflav.title">Smaki, które pokochają Twoi klubowicze</h2>
+          <p class="lead reveal" style="--i:2" data-i18n="pflav.lead">Sezonowe smaki i limitowane dropy zmieniają się kilka razy w roku. Klubowicze mają powód, żeby wracać, a klub ma co promować.</p>
+        </div>
+        <div class="rail-nav">
+          <button type="button" data-rail="previous" aria-label="Poprzednie smaki"><span aria-hidden="true">←</span></button>
+          <button type="button" data-rail="next" aria-label="Następne smaki"><span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+      <div data-flavour-list="rail">
+        <noscript><p>Vanilla Dream, Chocolate Bomb, Banana Boost, Strawberry Kiss, Cookie Crunch, Brownie Bliss, Pistachio Power, Cheesecake Heaven, Salted Caramel Crush, White Choc Cloud, Tiramisu Love, Peanut Butter Punch, Marshmallow Party, Mango Smoothie, Berry Banana Blast, Coco Choco Beach, Cappuccino Kick, Gingerbread Cookie, Cinnamon Roll, Pumpkin Spice Pie, Tropical Sunset, Neon Night Drive, Football Fever, Festival Lemonade.</p></noscript>
+      </div>
+      <div class="fnotes reveal">
+        <div class="fnote"><h3 data-i18n="flav.n1t">Kreatyna na życzenie</h3><p data-i18n="pflav.n1p">Do każdego smaku klubowicz może dodać porcję kreatyny. Wystarczy jedno dotknięcie na ekranie.</p></div>
+        <div class="fnote"><h3 data-i18n="flav.n2t">Rotacyjny wybór</h3><p data-i18n="flav.n2p">Każdy automat ma rotacyjny wybór smaków, więc nie wszystkie są dostępne w każdej siłowni w tym samym czasie.</p></div>
+      </div>
     </div>
   </section>
 
@@ -144,8 +208,32 @@
     <svg viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path class="fill" d="M0 50 C240 120 480 100 720 60 S1200 10 1440 70 V120 H0 Z"/><path class="stroke" d="M0 50 C240 120 480 100 720 60 S1200 10 1440 70"/></svg>
   </div>
 
+  <!-- PROWAVE PLUS THROUGH THE CLUB'S OWN APP: coming soon -->
+  <section class="section section--tight" id="plus">
+    <div class="container">
+      <div class="teaser reveal">
+        <div>
+          <span class="badge-soon" data-i18n="plus.badge">Już wkrótce</span>
+          <h2 data-i18n="pplus.title">ProWave <span class="accent">Plus</span> w aplikacji Twojego klubu</h2>
+          <p data-i18n="pplus.p1">ProWave Plus to miesięczny plan dla klubowiczów, z najlepszą ceną za każdy shake.</p>
+          <p data-i18n="pplus.p2">Jesteśmy otwarci na sprzedaż planu w aplikacji Twojego klubu. Klubowicze kupują go tam, gdzie już mają karnet, a klub zarabia na każdym abonamencie, niezależnie od udziału w pojedynczych shake'ach.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SWAP: images/ropes.webp. A big action photo from a gym, landscape, about 1600 px wide. -->
+  <section class="band">
+    <div class="container">
+      <figure class="band-figure band-figure--ropes reveal">
+        <img src="../images/ropes.webp" alt="Mężczyzna trenuje z linami w siłowni" data-i18n-attr="alt:pband.alt" width="1600" height="1067" loading="lazy" decoding="async">
+        <figcaption data-i18n="pband.title">Mocny trening. Dobre <span>zakończenie</span>.</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <!-- HOW WE START -->
-  <section class="section" id="start">
+  <section class="section section--start" id="start">
     <div class="container">
       <div class="section-head">
         <p class="eyebrow reveal" data-i18n="start.eyebrow">Jak zaczynamy</p>
@@ -173,10 +261,10 @@
       </div>
       <!-- WAVES FACTS: numbers taken from wavesint.com. Update them when the Waves site changes. -->
       <ul class="stats reveal">
-        <li class="stat"><strong>2006</strong><span data-i18n="proof.s2">od tego roku Waves zaopatruje branżę spożywczą</span></li>
         <li class="stat"><strong>452</strong><span data-i18n="exp.s2">zweryfikowanych dostawców</span></li>
         <li class="stat"><strong>158</strong><span data-i18n="exp.s3">zadowolonych partnerów</span></li>
         <li class="stat"><strong>64</strong><span data-i18n="exp.s4">składniki w stałej ofercie</span></li>
+        <li class="stat"><strong>8</strong><span data-i18n="exp.s5">obsługiwanych branż spożywczych</span></li>
       </ul>
       <div class="proof proof--card reveal">
         <div class="docs">
@@ -287,7 +375,7 @@
         <!-- COMPANY DETAILS: please confirm before going live. -->
         <h4>Waves SIA</h4>
         <ul>
-          <li>Latgales iela 153A-8, Rīga, LV-1003</li>
+          <li>Dzirnavu iela 57A, 2nd floor, Riga, LV-1010, Latvia</li>
           <li>VAT LV40003877787</li>
           <li><a class="js-email" href="#"></a></li>
           <li><a href="tel:+37120180230">+371 2 0180230</a></li>
@@ -304,5 +392,7 @@
 
 <script src="../js/i18n-en.js" defer></script>
 <script src="../js/main.js" defer></script>
+<script src="../js/flavours.js" defer></script>
+<script src="../js/demo.js" defer></script>
 </body>
 </html>

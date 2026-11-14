@@ -6,12 +6,26 @@ Plain HTML, CSS and JavaScript. No build step. Polish by default, English with t
 
 | Page | File | What it is for |
 |---|---|---|
-| Home | `index.html` | The brand and the product. Only a small "Do you run a gym?" pointer at the bottom. |
-| Partnership | `partnership/index.html` | Everything for gym owners: benefits, earnings calculator, pilot steps, contact form. Send gym owners the link ending in `/partnership/`. |
-
-The machine picture (`assets/machine.svg`) is a drawing placed over a gym photo. When you have a real photo of your machine in a gym, replace the two images inside the block marked `MACHINE SCENE` with that photo.
+| Home | `index.html` | The brand, the product, the flavours and the "Try it yourself" screen. The gym partner offer sits right under the top of the page. |
+| Partnership | `partnership/index.html` | Everything for gym owners: benefits, a smaller demo screen, flavours, earnings calculator, ProWave Plus through the club's app, pilot steps, contact form. Send gym owners the link ending in `/partnership/`. |
 
 The colours are five values at the top of `css/styles.css`: `--paper` (page background), `--sand` (alternating sections), `--navy` (text and the one dark section), `--teal` (brand accent and the wave) and `--teal-dark` (buttons only).
+
+## Flavours
+
+All flavours live in one file: `js/flavours.js`. The flavour cards on both pages and the "Try it yourself" screen read from it, so a change there shows up everywhere.
+
+Each flavour is one entry in the list marked `FLAVOURS`:
+
+- `name` stays in English in both languages.
+- `pl` and `en` are the short descriptions.
+- `group` decides where it appears: `classics`, `desserts`, `fruity`, `coffee`, `seasonal` or `drops`. Seasonal flavours get the "Limited season" badge and trend drops get the "Limited drop" badge by themselves.
+- `season` (`winter`, `autumn` or `summer`) is for seasonal flavours. They show in the order they are listed, so keep winter first.
+- `bg`, `liq`, `acc` and `top` are the colours and the look of the cup.
+
+To remove a flavour, delete its entry. To add one, copy an entry and change it. If you remove a flavour, also take its id out of the short list on the partnership demo (search for `data-flavours` in `partnership/index.html`).
+
+"Chocolate Bomb" says it is made with organic Fairtrade cocoa. Keep that sentence only while the cocoa is certified and you are allowed to use the claim.
 
 ## Before going live
 
@@ -25,27 +39,39 @@ Open `js/main.js`. The settings are the first lines of the file.
 
 Then check these placeholders:
 
-- Flavour names in the product section of `index.html` (search for `FLAVOURS`).
 - Partner logos in "Our experience" in `partnership/index.html` (search for `OUR EXPERIENCE`). The Waves numbers on both pages come from wavesint.com (search for `WAVES FACTS`).
 - Company details in the footer of both pages (search for `COMPANY DETAILS`).
 - A privacy policy page. The form has a short consent line, but a full policy is needed for Poland.
 
-English texts are in `js/i18n-en.js`. Polish texts are in the two HTML files.
+English texts are in `js/i18n-en.js`. Polish texts are in the two HTML files. The words on the demo screen are at the top of `js/demo.js`.
 
-## Replacing photos
+## Swapping in your own photos and videos
 
-Save your photo under the same file name in `images/` and it appears on the page.
+Every photo and video spot is marked in the HTML with a comment that starts with `SWAP`. Search for `SWAP` to find them all. The simplest way to replace one is to save your file under the same name in the same folder.
 
-| File | Where it shows | Suggested size |
+| File | Where it shows | What to use |
 |---|---|---|
-| `hero.jpg` | Top of the page | 1800 px wide, landscape, dark |
-| `shake.jpg` | Product section | 1200 px wide |
-| `source.jpg` | From source to shake | 1400 px wide, landscape |
-| `gym.jpg` | Behind the machine on the home page, top of the partnership page | 1600 px wide, landscape |
-| `member.jpg` | Spare photo, not used on the page now | 1400 px wide |
-| `powder.jpg` | Spare photo, not used on the page yet | 1200 px wide |
+| `video/hero.mp4` + `images/hero-poster.webp` | Home, top | 3 to 8 seconds, no sound. A member taking a shake from the machine would be ideal. |
+| `video/shake-gym.mp4` + `images/shake-gym-poster.webp` | Home, gym partner offer | 1 to 2 seconds, landscape. Your machine or cup in a partner club. |
+| `assets/machine.svg` + `images/scene-gym.webp` | Home, "How it works" | A drawing over a gym photo. Replace both with one real photo of your machine in a gym. |
+| `video/pour.mp4` + `images/pour-poster.webp` | Home, the product | 2 to 3 seconds, portrait. A real ProWave shake being made. |
+| `images/athlete.webp` | Home, big photo | Landscape, about 1600 px wide. |
+| `video/swirl.mp4` + `images/swirl-poster.webp` | Home, our flavours | 1 to 2 seconds, landscape. |
+| `images/splash.webp` | Home, from source to shake | Landscape, about 1400 px wide. |
+| `video/gym.mp4` + `images/gym-poster.webp` | Partnership, top | 3 to 8 seconds, no sound. A busy partner club. |
+| `assets/machine.svg` + `images/scene-club.webp` | Partnership, "Our brand in your gym" | Replace both with one real photo of your machine. |
+| `images/after-training.webp` | Partnership, benefits | Landscape, about 1400 px wide. |
+| `images/ropes.webp` | Partnership, big photo | Landscape, about 1600 px wide. |
+| `images/og.jpg` | The preview picture when the link is shared | 1200 by 630 px, JPG. |
 
-The current photos come from Unsplash and are free to use, including commercially.
+Rules that keep the site fast:
+
+- Photos: WebP, no wider than 1600 px, ideally under 200 KB.
+- Videos: MP4 (H.264), no sound, under about 3 MB each. Every video needs a still image (its "poster") with the same framing. The still image shows first and stays on screen on slow mobile connections, when the phone is saving data, and for visitors who switched off animations.
+- Do not use photos that show other brands' logos, products or competitor machines.
+- When you change a photo, update its description in the `alt="..."` text next to it (and the matching English line in `js/i18n-en.js`).
+
+Where each current photo and video comes from is listed in `CREDITS.md`. When you replace a stock file with your own, remove its line there.
 
 ## Logo files
 
