@@ -11,7 +11,7 @@ Plain HTML, CSS and JavaScript. No build step. Polish by default, English with t
 
 The machine picture (`assets/machine.svg`) is a drawing placed over a gym photo. When you have a real photo of your machine in a gym, replace the two images inside the block marked `MACHINE SCENE` with that photo.
 
-The accent colour for the main buttons is `--volt` at the top of `css/styles.css`. Change that one value to try another colour.
+The colours are five values at the top of `css/styles.css`: `--paper` (page background), `--sand` (alternating sections), `--navy` (text and the one dark section), `--teal` (brand accent and the wave) and `--teal-dark` (buttons only).
 
 ## Before going live
 
@@ -26,7 +26,7 @@ Open `js/main.js`. The settings are the first lines of the file.
 Then check these placeholders:
 
 - Flavour names in the product section of `index.html` (search for `FLAVOURS`).
-- Numbers and partner logos in "Our experience" in `partnership/index.html` (search for `OUR EXPERIENCE`).
+- Partner logos in "Our experience" in `partnership/index.html` (search for `OUR EXPERIENCE`). The Waves numbers on both pages come from wavesint.com (search for `WAVES FACTS`).
 - Company details in the footer of both pages (search for `COMPANY DETAILS`).
 - A privacy policy page. The form has a short consent line, but a full policy is needed for Poland.
 
@@ -42,7 +42,7 @@ Save your photo under the same file name in `images/` and it appears on the page
 | `shake.jpg` | Product section | 1200 px wide |
 | `source.jpg` | From source to shake | 1400 px wide, landscape |
 | `gym.jpg` | Behind the machine on the home page, top of the partnership page | 1600 px wide, landscape |
-| `member.jpg` | ProWave Plus | 1400 px wide |
+| `member.jpg` | Spare photo, not used on the page now | 1400 px wide |
 | `powder.jpg` | Spare photo, not used on the page yet | 1200 px wide |
 
 The current photos come from Unsplash and are free to use, including commercially.
