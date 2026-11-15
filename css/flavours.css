@@ -143,9 +143,6 @@
 /* Text and screen side by side */
 .demo-grid { display: grid; gap: clamp(32px, 6vw, 72px); align-items: center; }
 .demo-copy .lead { margin-top: 20px; }
-.demo-steps { margin-top: 26px; display: grid; gap: 12px; counter-reset: demo; }
-.demo-steps li { display: flex; gap: 14px; align-items: baseline; color: var(--muted); }
-.demo-steps li::before { counter-increment: demo; content: "0" counter(demo); font-stretch: 75%; font-weight: 800; font-size: 1.3rem; line-height: 1; color: var(--teal); }
 
 @media (max-width: 359px) {
   .k-tile { padding: 6px; }

@@ -95,7 +95,7 @@ To count a click on another link, add `data-umami-event="Your name"` to it.
 
 ## After changing a style or script file
 
-Browsers keep style and script files for a while. So that a changed page never loads with old styles, every link to a `css` or `js` file in the two HTML files ends with `?v=6`. Whenever you change one of those files, raise that number in all of those links on both pages (search for `?v=`).
+Browsers keep style and script files for a while. So that a changed page never loads with old styles, every link to a `css` or `js` file in the two HTML files ends with `?v=7`. Whenever you change one of those files, raise that number in all of those links on both pages (search for `?v=`).
 
 ## Logo files
 
