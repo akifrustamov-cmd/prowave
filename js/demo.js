@@ -1,9 +1,9 @@
-/* ProWave "Try it yourself": a drawn machine touchscreen visitors can play with.
+/* ProWheys "Try it yourself": a drawn machine touchscreen visitors can play with.
    Flavours come from js/flavours.js. */
 (function () {
   'use strict';
 
-  var lib = window.ProWaveFlavours;
+  var lib = window.ProWheysFlavours;
   if (!lib) return;
 
   /* How long the mixing animation takes. The real machine needs about a minute. */
@@ -22,7 +22,7 @@
 
   var STRINGS = {
     pl: {
-      screen: 'Ekran automatu ProWave, wersja pokazowa',
+      screen: 'Ekran automatu ProWheys, wersja pokazowa',
       pick: 'Wybierz smak',
       step: 'Krok {n} z 3',
       tabs: { classics: 'Klasyki', desserts: 'Desery', fruity: 'Owocowe i kawa', limited: 'Limitowane' },
@@ -49,7 +49,7 @@
       again: 'Spróbuj innego smaku'
     },
     en: {
-      screen: 'ProWave machine screen, demo version',
+      screen: 'ProWheys machine screen, demo version',
       pick: 'Pick a flavour',
       step: 'Step {n} of 3',
       tabs: { classics: 'Classics', desserts: 'Desserts', fruity: 'Fruity and coffee', limited: 'Limited' },
@@ -263,7 +263,7 @@
       if (action) action(button);
     });
 
-    document.addEventListener('prowave:lang', function () {
+    document.addEventListener('prowheys:lang', function () {
       // Mid-mix the screen is left alone, so the animation does not start again. The result shows in the new language.
       if (state.step === 3) return;
       render(null);

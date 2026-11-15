@@ -1,4 +1,4 @@
-/* ProWave site scripts. No dependencies. */
+/* ProWheys site scripts. No dependencies. */
 (function () {
   'use strict';
 
@@ -16,7 +16,7 @@
     daysPerMonth: 30
   };
 
-  var LANG_KEY = 'prowave-lang';
+  var LANG_KEY = 'prowheys-lang';
   var doc = document;
   var root = doc.documentElement;
   var currentLang = 'pl';
@@ -24,7 +24,7 @@
 
   function $(selector, scope) { return (scope || doc).querySelector(selector); }
   function $all(selector, scope) { return Array.prototype.slice.call((scope || doc).querySelectorAll(selector)); }
-  function messages() { return window.PROWAVE_MESSAGES[currentLang]; }
+  function messages() { return window.PROWHEYS_MESSAGES[currentLang]; }
 
   /* ---------- Language switch ---------- */
   function readSavedLang() {
@@ -59,7 +59,7 @@
 
   function setLang(lang) {
     currentLang = lang === 'en' ? 'en' : 'pl';
-    var dict = currentLang === 'en' ? window.PROWAVE_EN : null;
+    var dict = currentLang === 'en' ? window.PROWHEYS_EN : null;
     $all('[data-i18n]').forEach(function (el) { translateText(el, dict); });
     $all('[data-i18n-attr]').forEach(function (el) { translateAttrs(el, dict); });
     root.lang = currentLang;
@@ -70,7 +70,7 @@
     updateCalculator();
     updateContactLinks();
     // The flavour cards and the demo screen listen for this and redraw in the new language.
-    doc.dispatchEvent(new CustomEvent('prowave:lang', { detail: { lang: currentLang } }));
+    doc.dispatchEvent(new CustomEvent('prowheys:lang', { detail: { lang: currentLang } }));
   }
 
   /* ---------- Earnings calculator ---------- */

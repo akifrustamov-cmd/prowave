@@ -8,7 +8,7 @@ Each file was checked by eye for other brands' logos, products and competitor ma
 
 | File on the site | Still image | Where it shows | Source | Author |
 |---|---|---|---|---|
-| `video/hero.mp4` | `images/hero-poster.webp` | Home, top of the page, under the drawn ProWave dispenser | [Pouring chocolate drink in milk](https://www.pexels.com/video/pouring-chocolate-drink-in-milk-6535481/) | Roman Odintsov |
+| `video/hero.mp4` | `images/hero-poster.webp` | Home, top of the page, under the drawn ProWheys dispenser | [Pouring chocolate drink in milk](https://www.pexels.com/video/pouring-chocolate-drink-in-milk-6535481/) | Roman Odintsov |
 | `video/shake-gym.mp4` | `images/shake-gym-poster.webp` | Home, gym partner offer | [A man sitting in a gym with a drink](https://www.pexels.com/video/a-man-sitting-in-a-gym-with-a-drink-7690363/) | cottonbro studio |
 | `video/swirl.mp4` | `images/swirl-poster.webp` | Home, our flavours | [Strawberry shake in a blender](https://www.pexels.com/video/strawberry-shake-in-a-blender-7656417/) | Cup of Couple |
 | `video/gym.mp4` | `images/gym-poster.webp` | Partnership, top of the page | [People working out at the gym](https://www.pexels.com/video/people-working-out-at-the-gym-6388421/) | Tima Miroshnichenko |
@@ -25,9 +25,9 @@ Each file was checked by eye for other brands' logos, products and competitor ma
 | `images/after-training.webp` | Partnership, benefits | [A man holding a protein shaker](https://www.pexels.com/photo/a-man-holding-a-protein-shaker-5327559/) | Tima Miroshnichenko |
 | `images/ropes.webp` | Partnership, big photo before "How we start" | [Man training with battle ropes](https://www.pexels.com/photo/man-training-with-battle-ropes-4164519/) | Ivan S |
 
-## Made for ProWave
+## Made for ProWheys
 
-The logo, the favicon, the machine drawing (`assets/machine.svg`), the ProWave dispenser on top of the first video, the cups on the flavour cards and the machine screen in "Try it yourself" are drawn for this site and are not stock.
+The logo, the favicon, the machine drawing (`assets/machine.svg`), the ProWheys dispenser on top of the first video, the cups on the flavour cards and the machine screen in "Try it yourself" are drawn for this site and are not stock.
 
 ## Font
 

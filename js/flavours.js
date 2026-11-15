@@ -1,4 +1,4 @@
-/* ProWave flavours.
+/* ProWheys flavours.
    This file is the one place to add, rename or remove a flavour.
    The flavour cards and the "Try it yourself" screen both read from it. */
 (function () {
@@ -338,7 +338,7 @@
     });
   }
 
-  window.ProWaveFlavours = {
+  window.ProWheysFlavours = {
     groups: GROUPS,
     flavours: FLAVOURS,
     text: TEXT,
@@ -354,7 +354,7 @@
     renderLists();
     renderDots();
     initRailButtons();
-    doc.addEventListener('prowave:lang', renderLists);
+    doc.addEventListener('prowheys:lang', renderLists);
   }
 
   if (doc.readyState === 'loading') doc.addEventListener('DOMContentLoaded', init);

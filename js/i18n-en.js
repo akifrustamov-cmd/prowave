@@ -1,9 +1,9 @@
 /* English texts. Polish lives in index.html and is the default. */
-window.PROWAVE_EN = {
-  'meta.title': 'ProWave. Fresh protein after every workout',
-  'meta.description': 'ProWave is a protein brand you find in gyms. A cold shake made with real whey, about 30 g of protein, ready in a minute. Powered by Waves.',
-  'meta.titlePartner': 'ProWave for gyms. Fresh protein in your club',
-  'meta.descriptionPartner': 'ProWave for gyms and fitness chains. A fresh protein machine with no investment and no extra work, and a share of every shake. Start a free pilot.',
+window.PROWHEYS_EN = {
+  'meta.title': 'ProWheys. Fresh protein after every workout',
+  'meta.description': 'ProWheys is a protein brand you find in gyms. A cold shake made with real whey, about 30 g of protein, ready in a minute. Powered by Waves.',
+  'meta.titlePartner': 'ProWheys for gyms. Fresh protein in your club',
+  'meta.descriptionPartner': 'ProWheys for gyms and fitness chains. A fresh protein machine with no investment and no extra work, and a share of every shake. Start a free pilot.',
   'nav.label': 'Main navigation',
   'nav.how': 'How it works',
   'nav.demo': 'Try it',
@@ -30,7 +30,7 @@ window.PROWAVE_EN = {
   'hero.fact2': 'and the shake is ready',
   'hero.fact3v': '+ creatine',
   'hero.fact3': 'with one tap, if you want it',
-  'hero.alt': 'A chocolate shake pouring into a glass from the ProWave machine',
+  'hero.alt': 'A chocolate shake pouring into a glass from the ProWheys machine',
   'hero.flavours': 'All flavours',
 
   'gymband.p': 'We install the machine at our cost, look after it and share the revenue from every shake. We start with a three month free pilot.',
@@ -45,7 +45,7 @@ window.PROWAVE_EN = {
   'how.s3t': 'Pay your way',
   'how.s3p': 'Pay for a single shake with all common cashless methods: card, contactless or phone.',
   'how.tagContactless': 'Contactless',
-  'how.tagPlus': 'ProWave Plus, soon',
+  'how.tagPlus': 'ProWheys Plus, soon',
   'how.tagCard': 'Card',
   'how.tagPhone': 'Phone',
 
@@ -67,7 +67,7 @@ window.PROWAVE_EN = {
 
   'demo.eyebrow': 'The machine screen',
   'demo.title': 'Try it yourself',
-  'demo.lead': 'This is the ProWave screen. Pick a flavour, choose water or milk, and watch your shake being made.',
+  'demo.lead': 'This is the ProWheys screen. Pick a flavour, choose water or milk, and watch your shake being made.',
   'demo.s1': 'Pick a flavour on the screen.',
   'demo.s2': 'Choose water or milk. Add creatine if you like.',
   'demo.s3': 'Tap and watch the cup fill up.',
@@ -93,8 +93,8 @@ window.PROWAVE_EN = {
   'pflav.n1p': 'Members can add a serving of creatine to any flavour. One tap on the screen is enough.',
 
   'source.title': 'From source to shake',
-  'source.p1': 'ProWave is backed by Waves, a Latvian company in the European Union. Every day we supply manufacturers across Europe with dairy proteins such as WPC 80 and WPI, and with creatine.',
-  'source.p2': 'We buy the protein for ProWave ourselves, with no middlemen. That is how we know what goes into the cup, and how we keep both quality and price under control.',
+  'source.p1': 'ProWheys is backed by Waves, a Latvian company in the European Union. Every day we supply manufacturers across Europe with dairy proteins such as WPC 80 and WPI, and with creatine.',
+  'source.p2': 'We buy the protein for ProWheys ourselves, with no middlemen. That is how we know what goes into the cup, and how we keep both quality and price under control.',
   'source.alt': 'A splash of milk on a dark background',
   'source.c1s': 'Source',
   'source.c1t': 'We choose the protein',
@@ -133,9 +133,9 @@ window.PROWAVE_EN = {
   'calc.note': 'This is an example, not a guaranteed result. We count 30 days a month and a 15% share of the price of every shake.',
 
   'plus.eyebrow': 'Subscription',
-  'plus.p': 'A monthly ProWave Plus plan for members, with the best price per shake. We are working on it and will let you know when it starts.',
-  'pplus.title': 'ProWave <span class="accent">Plus</span> in your club\'s own app',
-  'pplus.p1': 'ProWave Plus is a monthly plan for members, with the best price per shake.',
+  'plus.p': 'A monthly ProWheys Plus plan for members, with the best price per shake. We are working on it and will let you know when it starts.',
+  'pplus.title': 'ProWheys <span class="accent">Plus</span> in your club\'s own app',
+  'pplus.p1': 'ProWheys Plus is a monthly plan for members, with the best price per shake.',
   'pplus.p2': 'We are open to selling it through your club\'s own app. Members buy it in the app they already use, and the club earns a share of every subscription, on top of its share from single shakes.',
   'plus.badge': 'Coming soon',
 
@@ -146,27 +146,27 @@ window.PROWAVE_EN = {
   'docs.c1': 'Specification',
   'docs.c2': 'Certificate of analysis',
 
-  'scene.alt': 'A ProWave machine in a gym',
+  'scene.alt': 'A ProWheys machine in a gym',
   'scene.caption': 'Visualisation',
 
   'teaser.eyebrow': 'For gyms',
   'teaser.title': 'Do you run a gym?',
-  'teaser.title2': 'ProWave in your club?',
+  'teaser.title2': 'ProWheys in your club?',
   'teaser.p': 'Partnership details, the earnings calculator and the contact form are on a separate page.',
 
   'pnav.why': 'Benefits',
   'pnav.start': 'How we start',
   'phero.eyebrow': 'For gyms and fitness chains in Poland',
-  'phero.title': 'ProWave<br>in your <span class="accent">club</span>',
+  'phero.title': 'ProWheys<br>in your <span class="accent">club</span>',
   'phero.lead': 'We install the machine, look after it and share the revenue from every shake. You get a new service for your members, with no investment and no extra work.',
   'phero.fact1': 'invested by the club',
   'phero.fact2v': '3 months',
   'phero.fact2': 'of free pilot',
   'phero.fact3': 'share in the example calculation',
   'phero.alt': 'Two people training on air bikes in a gym',
-  'pscene.eyebrow': 'ProWave in the club',
+  'pscene.eyebrow': 'ProWheys in the club',
   'pscene.title': 'Our brand in your gym',
-  'pscene.lead': 'The machine carries the ProWave brand and catches the eye after training. The member picks a flavour and a minute later holds a cold shake. A single shake is paid with all common cashless methods: card, contactless or phone.',
+  'pscene.lead': 'The machine carries the ProWheys brand and catches the eye after training. The member picks a flavour and a minute later holds a cold shake. A single shake is paid with all common cashless methods: card, contactless or phone.',
 
   'start.eyebrow': 'How we start',
   'start.title': 'From a first talk to the first shakes',
@@ -175,13 +175,13 @@ window.PROWAVE_EN = {
   'start.s2t': 'Installation',
   'start.s2p': 'We deliver, set up and switch on the machine.',
   'start.s3t': 'Three month pilot',
-  'start.s3p': 'You test ProWave free of charge for three months.',
+  'start.s3p': 'You test ProWheys free of charge for three months.',
   'start.s4t': 'Joint review',
   'start.s4p': 'We sit down with the results and decide together what comes next.',
 
   'exp.eyebrow': 'Our experience',
   'exp.title': 'The backbone behind the brand',
-  'exp.lead': 'Every day Waves supplies manufacturers across Europe with dairy proteins and creatine. The same backbone works for ProWave.',
+  'exp.lead': 'Every day Waves supplies manufacturers across Europe with dairy proteins and creatine. The same backbone works for ProWheys.',
   'exp.s2': 'verified suppliers',
   'exp.s3': 'satisfied partners',
   'exp.s4': 'ingredients always in the range',
@@ -206,22 +206,22 @@ window.PROWAVE_EN = {
   'form.consent': 'I agree to be contacted about a partnership. The data controller is Waves SIA and we will use your details only to answer this enquiry.',
   'form.submit': 'Send enquiry',
 
-  'footer.about': 'ProWave is a brand of Waves SIA, a European supplier of dairy proteins and creatine.',
+  'footer.about': 'ProWheys is a brand of Waves SIA, a European supplier of dairy proteins and creatine.',
   'footer.site': 'Site',
-  'footer.home': 'ProWave home page',
+  'footer.home': 'ProWheys home page',
   'footer.rights': 'All rights reserved.'
 };
 
 /* Short messages used by the scripts, in both languages. */
-window.PROWAVE_MESSAGES = {
+window.PROWHEYS_MESSAGES = {
   pl: {
     sending: 'Wysyłamy…',
     sent: 'Dziękujemy. Odezwiemy się wkrótce.',
     failed: 'Nie udało się wysłać. Napisz do nas bezpośrednio na adres ',
     consent: 'Zaznacz zgodę, żebyśmy mogli się odezwać.',
     mailOpened: 'Otworzyliśmy wiadomość w Twojej poczcie. Wyślij ją, a my się odezwiemy.',
-    mailSubject: 'Pilotaż ProWave',
-    callSubject: 'Rozmowa o pilotażu ProWave',
+    mailSubject: 'Pilotaż ProWheys',
+    callSubject: 'Rozmowa o pilotażu ProWheys',
     labels: { name: 'Imię i nazwisko', gym: 'Siłownia', city: 'Miasto', email: 'E-mail', phone: 'Telefon', message: 'Wiadomość' }
   },
   en: {
@@ -230,8 +230,8 @@ window.PROWAVE_MESSAGES = {
     failed: 'Sending failed. Please write to us directly at ',
     consent: 'Please tick the consent box so we can contact you.',
     mailOpened: 'We opened a message in your email app. Send it and we will get back to you.',
-    mailSubject: 'ProWave pilot',
-    callSubject: 'Call about the ProWave pilot',
+    mailSubject: 'ProWheys pilot',
+    callSubject: 'Call about the ProWheys pilot',
     labels: { name: 'Full name', gym: 'Gym', city: 'City', email: 'Email', phone: 'Phone', message: 'Message' }
   }
 };
