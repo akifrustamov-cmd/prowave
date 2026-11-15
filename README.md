@@ -6,7 +6,7 @@ Plain HTML, CSS and JavaScript. No build step. Polish by default, English with t
 
 | Page | File | What it is for |
 |---|---|---|
-| Home | `index.html` | The brand, the product, the flavours and the "Try it yourself" screen. The gym partner offer sits right under the top of the page. |
+| Home | `index.html` | The brand, the product, the flavours and the "Try it yourself" screen. The order at the top is: the shake video, then "Try it yourself", then the gym partner offer. |
 | Partnership | `partnership/index.html` | Everything for gym owners: benefits, a smaller demo screen, flavours, earnings calculator, ProWheys Plus through the club's app, pilot steps, contact form. Send gym owners the link ending in `/partnership/`. |
 
 The colours are five values at the top of `css/styles.css`: `--paper` (page background), `--sand` (alternating sections), `--navy` (text and the one dark section), `--teal` (brand accent and the wave) and `--teal-dark` (buttons only).
@@ -42,6 +42,8 @@ Then check these placeholders:
 - Partner logos in "Our experience" in `partnership/index.html` (search for `OUR EXPERIENCE`). The Waves numbers on both pages come from wavesint.com (search for `WAVES FACTS`).
 - Company details in the footer of both pages (search for `COMPANY DETAILS`).
 - A privacy policy page. The form has a short consent line, but a full policy is needed for Poland.
+
+On phones and tablets the menu is a column of dots on the right edge of the screen (search for `SIDE DOT MENU` in both HTML files). It has the same points as the header menu, so when you change one, change the other too.
 
 English texts are in `js/i18n-en.js`. Polish texts are in the two HTML files. The words on the demo screen are at the top of `js/demo.js`.
 

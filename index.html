@@ -27,8 +27,8 @@
     <a class="brand" href="#top" aria-label="ProWheys"><img src="assets/logo-dark.svg" alt="ProWheys" width="213" height="26"></a>
     <span class="powered">Powered by <strong>Waves</strong></span>
     <nav class="nav" aria-label="Główna nawigacja" data-i18n-attr="aria-label:nav.label">
-      <a href="#jak-to-dziala" data-i18n="nav.how">Jak to działa</a>
       <a href="#demo" data-i18n="nav.demo">Wypróbuj</a>
+      <a href="#jak-to-dziala" data-i18n="nav.how">Jak to działa</a>
       <a href="#smaki" data-i18n="nav.flavours">Smaki</a>
       <a href="#waves" data-i18n="nav.source">Od źródła</a>
     </nav>
@@ -39,6 +39,14 @@
     <a class="btn btn-primary btn-sm header-cta" href="partnership/" data-i18n="cta.partnerShort">Zostań partnerem</a>
   </div>
 </header>
+
+<!-- SIDE DOT MENU for phones and tablets: one dot per menu point, the same points as the header menu. -->
+<nav class="dotnav" aria-label="Menu sekcji" data-i18n-attr="aria-label:dotnav.label" data-dotnav>
+  <a href="#demo"><span class="dotnav-label" data-i18n="nav.demo">Wypróbuj</span><i aria-hidden="true"></i></a>
+  <a href="#jak-to-dziala"><span class="dotnav-label" data-i18n="nav.how">Jak to działa</span><i aria-hidden="true"></i></a>
+  <a href="#smaki"><span class="dotnav-label" data-i18n="nav.flavours">Smaki</span><i aria-hidden="true"></i></a>
+  <a href="#waves"><span class="dotnav-label" data-i18n="nav.source">Od źródła</span><i aria-hidden="true"></i></a>
+</nav>
 
 <main id="top">
 
@@ -90,8 +98,38 @@
     <svg viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path class="fill" d="M0 70 C240 10 480 10 720 60 S1200 120 1440 50 V120 H0 Z"/><path class="stroke" d="M0 70 C240 10 480 10 720 60 S1200 120 1440 50"/></svg>
   </div>
 
-  <!-- FOR GYM OWNERS, near the top. The full offer lives in partnership/index.html -->
-  <section class="section section--sand section--tight partner-band" id="dla-silowni">
+  <!-- TRY IT YOURSELF: the machine screen. It is drawn by js/demo.js from the flavours in js/flavours.js -->
+  <section class="section section--sand" id="demo">
+    <div class="container demo-grid">
+      <div class="demo-copy">
+        <p class="eyebrow reveal" data-i18n="demo.eyebrow">Ekran automatu</p>
+        <h2 class="reveal" style="--i:1" data-i18n="demo.title">Wypróbuj sam</h2>
+        <p class="lead reveal" style="--i:2" data-i18n="demo.lead">Tak wygląda ekran ProWheys. Wybierz smak, zdecyduj, czy na wodzie, czy na mleku, i zobacz, jak powstaje Twój shake.</p>
+        <ol class="demo-steps reveal" style="--i:3">
+          <li data-i18n="demo.s1">Wybierz smak na ekranie.</li>
+          <li data-i18n="demo.s2">Zdecyduj: woda czy mleko. Kreatyna, jeśli chcesz.</li>
+          <li data-i18n="demo.s3">Dotknij i patrz, jak napełnia się kubek.</li>
+        </ol>
+      </div>
+      <div class="kiosk reveal" data-demo>
+        <div class="kiosk-frame">
+          <div class="kiosk-bar">
+            <img src="assets/logo.svg" alt="ProWheys" width="123" height="15" loading="lazy">
+            <ol class="kiosk-dots" aria-hidden="true"><li></li><li></li><li></li><li></li></ol>
+          </div>
+          <div class="kiosk-screen" role="group"><noscript>Ten pokaz działa po włączeniu JavaScript.</noscript></div>
+        </div>
+        <p class="kiosk-caption" data-i18n="demo.caption">To pokaz. W automacie shake powstaje w około minutę.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" style="--from:#e8dfd0;--to:#f6f4ef">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path class="fill" d="M0 50 C240 120 480 100 720 60 S1200 10 1440 70 V120 H0 Z"/><path class="stroke" d="M0 50 C240 120 480 100 720 60 S1200 10 1440 70"/></svg>
+  </div>
+
+  <!-- FOR GYM OWNERS, right after the demo. The full offer lives in partnership/index.html -->
+  <section class="section section--tight partner-band" id="dla-silowni">
     <div class="container split split--band">
       <div>
         <p class="eyebrow reveal" data-i18n="teaser.eyebrow">Dla siłowni</p>
@@ -115,12 +153,12 @@
     </div>
   </section>
 
-  <div class="divider" style="--from:#e8dfd0;--to:#f6f4ef">
-    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path class="fill" d="M0 50 C240 120 480 100 720 60 S1200 10 1440 70 V120 H0 Z"/><path class="stroke" d="M0 50 C240 120 480 100 720 60 S1200 10 1440 70"/></svg>
+  <div class="divider" style="--from:#f6f4ef;--to:#e8dfd0">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path class="fill" d="M0 70 C240 10 480 10 720 60 S1200 120 1440 50 V120 H0 Z"/><path class="stroke" d="M0 70 C240 10 480 10 720 60 S1200 120 1440 50"/></svg>
   </div>
 
   <!-- HOW IT WORKS -->
-  <section class="section" id="jak-to-dziala">
+  <section class="section section--sand" id="jak-to-dziala">
     <div class="container">
       <div class="section-head">
         <p class="eyebrow reveal" data-i18n="how.eyebrow">Jak to działa</p>
@@ -156,36 +194,6 @@
         <img class="scene-machine" src="assets/machine.svg" alt="Automat ProWheys w siłowni" data-i18n-attr="alt:scene.alt" width="320" height="640" loading="lazy">
         <figcaption data-i18n="scene.caption">Wizualizacja</figcaption>
       </figure>
-    </div>
-  </section>
-
-  <div class="divider" style="--from:#f6f4ef;--to:#e8dfd0">
-    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path class="fill" d="M0 70 C240 10 480 10 720 60 S1200 120 1440 50 V120 H0 Z"/><path class="stroke" d="M0 70 C240 10 480 10 720 60 S1200 120 1440 50"/></svg>
-  </div>
-
-  <!-- TRY IT YOURSELF: the machine screen. It is drawn by js/demo.js from the flavours in js/flavours.js -->
-  <section class="section section--sand" id="demo">
-    <div class="container demo-grid">
-      <div class="demo-copy">
-        <p class="eyebrow reveal" data-i18n="demo.eyebrow">Ekran automatu</p>
-        <h2 class="reveal" style="--i:1" data-i18n="demo.title">Wypróbuj sam</h2>
-        <p class="lead reveal" style="--i:2" data-i18n="demo.lead">Tak wygląda ekran ProWheys. Wybierz smak, zdecyduj, czy na wodzie, czy na mleku, i zobacz, jak powstaje Twój shake.</p>
-        <ol class="demo-steps reveal" style="--i:3">
-          <li data-i18n="demo.s1">Wybierz smak na ekranie.</li>
-          <li data-i18n="demo.s2">Zdecyduj: woda czy mleko. Kreatyna, jeśli chcesz.</li>
-          <li data-i18n="demo.s3">Dotknij i patrz, jak napełnia się kubek.</li>
-        </ol>
-      </div>
-      <div class="kiosk reveal" data-demo>
-        <div class="kiosk-frame">
-          <div class="kiosk-bar">
-            <img src="assets/logo.svg" alt="ProWheys" width="123" height="15" loading="lazy">
-            <ol class="kiosk-dots" aria-hidden="true"><li></li><li></li><li></li><li></li></ol>
-          </div>
-          <div class="kiosk-screen" role="group"><noscript>Ten pokaz działa po włączeniu JavaScript.</noscript></div>
-        </div>
-        <p class="kiosk-caption" data-i18n="demo.caption">To pokaz. W automacie shake powstaje w około minutę.</p>
-      </div>
     </div>
   </section>
 
@@ -368,6 +376,7 @@
 
 <script src="js/i18n-en.js" defer></script>
 <script src="js/main.js" defer></script>
+<script src="js/dotnav.js" defer></script>
 <script src="js/flavours.js" defer></script>
 <script src="js/demo.js" defer></script>
 </body>

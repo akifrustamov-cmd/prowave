@@ -5,6 +5,7 @@ window.PROWHEYS_EN = {
   'meta.titlePartner': 'ProWheys for gyms. Fresh protein in your club',
   'meta.descriptionPartner': 'ProWheys for gyms and fitness chains. A fresh protein machine with no investment and no extra work, and a share of every shake. Start a free pilot.',
   'nav.label': 'Main navigation',
+  'dotnav.label': 'Section menu',
   'nav.how': 'How it works',
   'nav.demo': 'Try it',
   'nav.flavours': 'Flavours',
