@@ -75,6 +75,10 @@ Rules that keep the site fast:
 
 Where each current photo and video comes from is listed in `CREDITS.md`. When you replace a stock file with your own, remove its line there.
 
+## After changing a style or script file
+
+Browsers keep style and script files for a while. So that a changed page never loads with old styles, every link to a `css` or `js` file in the two HTML files ends with `?v=2`. Whenever you change one of those files, raise that number in all of those links on both pages (search for `?v=`).
+
 ## Logo files
 
 `assets/logo.svg` (for dark backgrounds), `assets/logo-dark.svg` (for light backgrounds), `assets/mark.svg` (waves only), `assets/favicon.svg`, plus PNG icons for phones.
