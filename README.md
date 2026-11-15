@@ -40,7 +40,7 @@ The contact form sends each enquiry through Formspree (formspree.io), which emai
 
 Then check these placeholders:
 
-- Partner logos in "Our experience" in `partnership/index.html` (search for `OUR EXPERIENCE`). The Waves numbers on both pages come from wavesint.com (search for `WAVES FACTS`).
+- The Waves numbers on both pages come from wavesint.com (search for `WAVES FACTS`).
 - Company details in the footer of both pages (search for `COMPANY DETAILS`).
 - A privacy policy page. The form has a short consent line, but a full policy is needed for Poland.
 
@@ -95,7 +95,7 @@ To count a click on another link, add `data-umami-event="Your name"` to it.
 
 ## After changing a style or script file
 
-Browsers keep style and script files for a while. So that a changed page never loads with old styles, every link to a `css` or `js` file in the two HTML files ends with `?v=5`. Whenever you change one of those files, raise that number in all of those links on both pages (search for `?v=`).
+Browsers keep style and script files for a while. So that a changed page never loads with old styles, every link to a `css` or `js` file in the two HTML files ends with `?v=6`. Whenever you change one of those files, raise that number in all of those links on both pages (search for `?v=`).
 
 ## Logo files
 

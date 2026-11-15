@@ -187,7 +187,6 @@ window.PROWHEYS_EN = {
   'exp.s3': 'satisfied partners',
   'exp.s4': 'ingredients always in the range',
   'exp.s5': 'food industries served',
-  'exp.logo': 'Partner logo',
 
   'contact.eyebrow': 'Contact',
   'contact.title': 'Start a free pilot',
