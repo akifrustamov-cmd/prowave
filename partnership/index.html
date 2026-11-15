@@ -17,8 +17,10 @@
   <link rel="preload" href="../fonts/archivo-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../images/gym-poster.webp" as="image" type="image/webp">
   <!-- VERSION: the number after ?v= makes browsers fetch fresh styles and scripts. Raise it in every css and js link on this page whenever one of those files changes. -->
-  <link rel="stylesheet" href="../css/styles.css?v=2">
-  <link rel="stylesheet" href="../css/flavours.css?v=2">
+  <link rel="stylesheet" href="../css/styles.css?v=3">
+  <link rel="stylesheet" href="../css/flavours.css?v=3">
+  <!-- VISITOR STATISTICS (Umami, no cookies). Counts visits only on prowheys.com. The clicks it counts are the links marked data-umami-event. -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="e1c7a1fe-d55a-4a9a-a375-2779bd5c8dac" data-domains="prowheys.com"></script>
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -38,7 +40,7 @@
       <button type="button" data-lang="pl" aria-pressed="true">PL</button>
       <button type="button" data-lang="en" aria-pressed="false">EN</button>
     </div>
-    <a class="btn btn-primary btn-sm header-cta" href="#kontakt" data-i18n="cta.pilotShort">Zacznij pilotaż</a>
+    <a class="btn btn-primary btn-sm header-cta" href="#kontakt" data-umami-event="Pilot button" data-umami-event-place="header" data-i18n="cta.pilotShort">Zacznij pilotaż</a>
   </div>
 </header>
 
@@ -73,7 +75,7 @@
       <h1 class="reveal" style="--i:1" data-i18n="phero.title">ProWheys<br>w Twoim <span class="accent">klubie</span></h1>
       <p class="lead reveal" style="--i:2" data-i18n="phero.lead">Stawiamy automat, dbamy o niego i dzielimy się przychodem z każdego shake'a. Ty zyskujesz nową usługę dla klubowiczów, bez inwestycji i bez dodatkowej pracy.</p>
       <div class="actions reveal" style="--i:3">
-        <a class="btn btn-primary" href="#kontakt"><span data-i18n="cta.pilot">Zacznij darmowy pilotaż</span> <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn-primary" href="#kontakt" data-umami-event="Pilot button" data-umami-event-place="hero"><span data-i18n="cta.pilot">Zacznij darmowy pilotaż</span> <span class="arrow" aria-hidden="true">→</span></a>
         <a class="btn btn-ghost" href="#kalkulator" data-i18n="cta.calc">Policz swój udział</a>
       </div>
       <ul class="hero-facts reveal" style="--i:4">
@@ -256,7 +258,7 @@
         <li class="reveal" style="--i:3"><p class="n" aria-hidden="true">04</p><h3 data-i18n="start.s4t">Wspólne podsumowanie</h3><p data-i18n="start.s4p">Siadamy razem nad wynikami i decydujemy, co dalej.</p></li>
       </ol>
       <div class="actions start-cta reveal">
-        <a class="btn btn-primary" href="#kontakt"><span data-i18n="cta.pilot">Zacznij darmowy pilotaż</span> <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn-primary" href="#kontakt" data-umami-event="Pilot button" data-umami-event-place="how we start"><span data-i18n="cta.pilot">Zacznij darmowy pilotaż</span> <span class="arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
@@ -310,7 +312,7 @@
         <h2 class="reveal" style="--i:1" data-i18n="contact.title">Zacznij darmowy pilotaż</h2>
         <p class="lead reveal" style="--i:2" data-i18n="contact.lead">Zostaw kontakt, a wrócimy z konkretną propozycją dla Twojego klubu. Wolisz porozmawiać? Umów krótką rozmowę.</p>
         <div class="actions reveal" style="--i:3">
-          <a class="btn btn-ghost" id="bookCall" href="#kontakt"><span data-i18n="cta.call">Umów rozmowę</span> <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" id="bookCall" href="#kontakt" data-umami-event="Book a call button"><span data-i18n="cta.call">Umów rozmowę</span> <span class="arrow" aria-hidden="true">→</span></a>
         </div>
         <div class="contact-direct reveal" style="--i:4">
           <span data-i18n="contact.direct">Albo napisz bezpośrednio:</span>
@@ -397,13 +399,13 @@
 </footer>
 
 <div class="sticky-cta" id="stickyCta">
-  <a class="btn btn-primary" href="#kontakt"><span data-i18n="cta.pilotShort">Zacznij pilotaż</span> <span class="arrow" aria-hidden="true">→</span></a>
+  <a class="btn btn-primary" href="#kontakt" data-umami-event="Pilot button" data-umami-event-place="sticky bar"><span data-i18n="cta.pilotShort">Zacznij pilotaż</span> <span class="arrow" aria-hidden="true">→</span></a>
 </div>
 
-<script src="../js/i18n-en.js?v=2" defer></script>
-<script src="../js/main.js?v=2" defer></script>
-<script src="../js/dotnav.js?v=2" defer></script>
-<script src="../js/flavours.js?v=2" defer></script>
-<script src="../js/demo.js?v=2" defer></script>
+<script src="../js/i18n-en.js?v=3" defer></script>
+<script src="../js/main.js?v=3" defer></script>
+<script src="../js/dotnav.js?v=3" defer></script>
+<script src="../js/flavours.js?v=3" defer></script>
+<script src="../js/demo.js?v=3" defer></script>
 </body>
 </html>

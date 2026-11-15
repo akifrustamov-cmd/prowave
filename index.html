@@ -17,8 +17,10 @@
   <link rel="preload" href="fonts/archivo-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="images/hero-poster.webp" as="image" type="image/webp">
   <!-- VERSION: the number after ?v= makes browsers fetch fresh styles and scripts. Raise it in every css and js link on this page whenever one of those files changes. -->
-  <link rel="stylesheet" href="css/styles.css?v=2">
-  <link rel="stylesheet" href="css/flavours.css?v=2">
+  <link rel="stylesheet" href="css/styles.css?v=3">
+  <link rel="stylesheet" href="css/flavours.css?v=3">
+  <!-- VISITOR STATISTICS (Umami, no cookies). Counts visits only on prowheys.com. The clicks it counts are the links marked data-umami-event. -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="e1c7a1fe-d55a-4a9a-a375-2779bd5c8dac" data-domains="prowheys.com"></script>
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -37,7 +39,7 @@
       <button type="button" data-lang="pl" aria-pressed="true">PL</button>
       <button type="button" data-lang="en" aria-pressed="false">EN</button>
     </div>
-    <a class="btn btn-primary btn-sm header-cta" href="partnership/" data-i18n="cta.partnerShort">Zostań partnerem</a>
+    <a class="btn btn-primary btn-sm header-cta" href="partnership/" data-umami-event="Partner button" data-umami-event-place="header" data-i18n="cta.partnerShort">Zostań partnerem</a>
   </div>
 </header>
 
@@ -84,7 +86,7 @@
       <h1 class="reveal" style="--i:1" data-i18n="hero.title">Świeże białko<br>po każdym <span class="accent">treningu</span></h1>
       <p class="lead reveal" style="--i:2" data-i18n="hero.lead">Zimny shake z prawdziwej serwatki, zmiksowany w minutę. Czeka na Ciebie w siłowni, zaraz po treningu.</p>
       <div class="actions reveal" style="--i:3">
-        <a class="btn btn-primary" href="partnership/"><span data-i18n="cta.partner">Zostań siłownią partnerską</span> <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn-primary" href="partnership/" data-umami-event="Partner button" data-umami-event-place="hero"><span data-i18n="cta.partner">Zostań siłownią partnerską</span> <span class="arrow" aria-hidden="true">→</span></a>
         <a class="btn btn-ghost" href="#jak-to-dziala" data-i18n="cta.how">Zobacz, jak to działa</a>
       </div>
       <ul class="hero-facts reveal" style="--i:4">
@@ -142,7 +144,7 @@
           <li><strong>15%</strong><span data-i18n="phero.fact3">udziału w przykładowym wyliczeniu</span></li>
         </ul>
         <div class="actions reveal" style="--i:4">
-          <a class="btn btn-primary" href="partnership/"><span data-i18n="cta.partner">Zostań siłownią partnerską</span> <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn-primary" href="partnership/" data-umami-event="Partner button" data-umami-event-place="gym offer"><span data-i18n="cta.partner">Zostań siłownią partnerską</span> <span class="arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
       <!-- SWAP: video/shake-gym.mp4 and images/shake-gym-poster.webp. A 1 to 2 second loop of a shake in a gym.
@@ -336,7 +338,7 @@
           <h2 data-i18n="teaser.title2">ProWheys w Twoim klubie?</h2>
           <p data-i18n="teaser.p">Szczegóły współpracy, kalkulator zarobków i formularz kontaktowy zebraliśmy na osobnej stronie.</p>
         </div>
-        <a class="btn btn-primary" href="partnership/"><span data-i18n="cta.partner">Zostań siłownią partnerską</span> <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn-primary" href="partnership/" data-umami-event="Partner button" data-umami-event-place="closing"><span data-i18n="cta.partner">Zostań siłownią partnerską</span> <span class="arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
@@ -375,10 +377,10 @@
   </div>
 </footer>
 
-<script src="js/i18n-en.js?v=2" defer></script>
-<script src="js/main.js?v=2" defer></script>
-<script src="js/dotnav.js?v=2" defer></script>
-<script src="js/flavours.js?v=2" defer></script>
-<script src="js/demo.js?v=2" defer></script>
+<script src="js/i18n-en.js?v=3" defer></script>
+<script src="js/main.js?v=3" defer></script>
+<script src="js/dotnav.js?v=3" defer></script>
+<script src="js/flavours.js?v=3" defer></script>
+<script src="js/demo.js?v=3" defer></script>
 </body>
 </html>

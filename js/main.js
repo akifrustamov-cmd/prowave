@@ -26,6 +26,17 @@
   function $all(selector, scope) { return Array.prototype.slice.call((scope || doc).querySelectorAll(selector)); }
   function messages() { return window.PROWHEYS_MESSAGES[currentLang]; }
 
+  /* ---------- Visitor statistics (Umami) ----------
+     Counts a named action. Does nothing while the statistics script is blocked or still loading. */
+  function track(name, data) {
+    try {
+      if (window.umami && typeof window.umami.track === 'function') window.umami.track(name, data);
+    } catch (error) {
+      console.error('Statistics event failed:', error);
+    }
+  }
+  window.prowheysTrack = track;
+
   /* ---------- Language switch ---------- */
   function readSavedLang() {
     var fromUrl = new URLSearchParams(window.location.search).get('lang');
@@ -169,6 +180,7 @@
       if (data.get('_gotcha')) return; // spam bots fill the hidden field
 
       if (!CONFIG.formEndpoint) {
+        track('Form submitted', { method: 'email app' });
         window.location.href = buildMailto(data);
         setStatus(statusEl, messages().mailOpened, 'ok');
         return;
@@ -182,6 +194,7 @@
           if (!response.ok) throw new Error('Form service answered ' + response.status);
           form.reset();
           setStatus(statusEl, messages().sent, 'ok');
+          track('Form submitted', { method: 'form service' });
         })
         .catch(function (error) {
           console.error('Contact form failed:', error);
@@ -281,7 +294,10 @@
   /* ---------- Start ---------- */
   function init() {
     $all('.lang button').forEach(function (button) {
-      button.addEventListener('click', function () { setLang(button.getAttribute('data-lang')); });
+      button.addEventListener('click', function () {
+        setLang(button.getAttribute('data-lang'));
+        track('Language switch', { language: currentLang });
+      });
     });
     [shakesInput, priceInput].forEach(function (input) {
       if (input) input.addEventListener('input', updateCalculator);

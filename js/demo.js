@@ -6,6 +6,9 @@
   var lib = window.ProWheysFlavours;
   if (!lib) return;
 
+  /* Counts demo steps in the visitor statistics. Set up in js/main.js. */
+  var track = window.prowheysTrack || function () {};
+
   /* How long the mixing animation takes. The real machine needs about a minute. */
   var MIX_MS = 5000;
   var MIX_MS_REDUCED_MOTION = 1500;
@@ -178,6 +181,11 @@
     var state = { step: FIRST_STEP, tab: TABS[0].id, flavourId: null, base: 'water', creatine: false };
     var ticker = null;
 
+    function recipe() {
+      var flavour = lib.findFlavour(state.flavourId);
+      return { flavour: flavour ? flavour.name : '', base: state.base, creatine: state.creatine ? 'yes' : 'no' };
+    }
+
     function stopMixing() {
       if (ticker !== null) window.clearInterval(ticker);
       ticker = null;
@@ -204,6 +212,7 @@
           var active = document.activeElement;
           var stillHere = !active || active === document.body || screen.contains(active);
           setState({ step: LAST_STEP }, stillHere ? '.k-result-name' : null);
+          track('Demo shake finished', recipe());
           return;
         }
         if (count) count.textContent = String(Math.ceil((duration - elapsed) / 1000));
@@ -245,14 +254,20 @@
         var value = button.getAttribute('data-value');
         setState({ tab: value }, '[data-action="tab"][data-value="' + value + '"]');
       },
-      pick: function (button) { setState({ step: 2, flavourId: button.getAttribute('data-id') }, '.k-title'); },
+      pick: function (button) {
+        setState({ step: 2, flavourId: button.getAttribute('data-id') }, '.k-title');
+        track('Demo flavour picked', { flavour: recipe().flavour });
+      },
       back: function () { setState({ step: FIRST_STEP }, '.k-title'); },
       base: function (button) {
         var value = button.getAttribute('data-value') === 'milk' ? 'milk' : 'water';
         setState({ base: value }, '[data-action="base"][data-value="' + value + '"]');
       },
       creatine: function () { setState({ creatine: !state.creatine }, '[data-action="creatine"]'); },
-      make: function () { setState({ step: 3 }, '.k-title'); },
+      make: function () {
+        setState({ step: 3 }, '.k-title');
+        track('Demo shake started', recipe());
+      },
       again: function () { setState({ step: FIRST_STEP, flavourId: null, base: 'water', creatine: false }, '.k-title'); }
     };
 

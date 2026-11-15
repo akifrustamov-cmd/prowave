@@ -75,9 +75,26 @@ Rules that keep the site fast:
 
 Where each current photo and video comes from is listed in `CREDITS.md`. When you replace a stock file with your own, remove its line there.
 
+## Visitor statistics
+
+The site uses Umami (umami.is), which sets no cookies. The tracking code is in the `<head>` of both HTML files (search for `VISITOR STATISTICS`). It only counts visits on prowheys.com, so previews on your own computer are not counted.
+
+Besides page visits, it counts these actions, shown under "Events" in the Umami dashboard:
+
+| Event | When it is counted |
+|---|---|
+| Partner button | A click on "Become a partner gym" on the home page. The detail "place" says which button. |
+| Pilot button | A click on "Start a free pilot" on the partnership page. The detail "place" says which button. |
+| Book a call button | A click on "Book a call". |
+| Form submitted | The contact form passed its checks and was handed to the email app or the form service. |
+| Demo flavour picked, Demo shake started, Demo shake finished | Steps on the "Try it yourself" screen, with the flavour, water or milk, and creatine. |
+| Language switch | A click on PL or EN. |
+
+To count a click on another link, add `data-umami-event="Your name"` to it.
+
 ## After changing a style or script file
 
-Browsers keep style and script files for a while. So that a changed page never loads with old styles, every link to a `css` or `js` file in the two HTML files ends with `?v=2`. Whenever you change one of those files, raise that number in all of those links on both pages (search for `?v=`).
+Browsers keep style and script files for a while. So that a changed page never loads with old styles, every link to a `css` or `js` file in the two HTML files ends with `?v=3`. Whenever you change one of those files, raise that number in all of those links on both pages (search for `?v=`).
 
 ## Logo files
 
