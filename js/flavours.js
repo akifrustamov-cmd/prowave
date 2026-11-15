@@ -311,6 +311,18 @@
     });
   }
 
+  /* Small colour dots, used as the flavour buttons on the dispenser at the top of the home page. */
+  function renderDots() {
+    Array.prototype.forEach.call(doc.querySelectorAll('[data-flavour-dots]'), function (holder) {
+      var active = holder.getAttribute('data-active');
+      holder.innerHTML = holder.getAttribute('data-flavour-dots').split(',').map(function (id) {
+        var flavour = findFlavour(id.trim());
+        if (!flavour) return '';
+        return '<i' + (flavour.id === active ? ' class="is-active"' : '') + ' style="background:linear-gradient(160deg,' + flavour.bg[0] + ',' + flavour.bg[1] + ')"></i>';
+      }).join('');
+    });
+  }
+
   /* Arrow buttons for the single row of flavours on the partnership page. */
   function initRailButtons() {
     doc.addEventListener('click', function (event) {
@@ -340,6 +352,7 @@
 
   function init() {
     renderLists();
+    renderDots();
     initRailButtons();
     doc.addEventListener('prowave:lang', renderLists);
   }

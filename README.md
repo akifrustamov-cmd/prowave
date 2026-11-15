@@ -51,10 +51,10 @@ Every photo and video spot is marked in the HTML with a comment that starts with
 
 | File | Where it shows | What to use |
 |---|---|---|
-| `video/hero.mp4` + `images/hero-poster.webp` | Home, top | 3 to 8 seconds, no sound. A member taking a shake from the machine would be ideal. |
+| `video/hero.mp4` + `images/hero-poster.webp` | Home, top | 3 to 8 seconds, no sound, portrait. Now it is stock shake footage with a drawn ProWave dispenser on top. Replace it with real footage of your machine filling a cup, then delete the `dispenser` block in `index.html`. The pill under it names the flavour in the clip (`hero-flavour`), so change the name there if the new clip shows another one. |
 | `video/shake-gym.mp4` + `images/shake-gym-poster.webp` | Home, gym partner offer | 1 to 2 seconds, landscape. Your machine or cup in a partner club. |
 | `assets/machine.svg` + `images/scene-gym.webp` | Home, "How it works" | A drawing over a gym photo. Replace both with one real photo of your machine in a gym. |
-| `video/pour.mp4` + `images/pour-poster.webp` | Home, the product | 2 to 3 seconds, portrait. A real ProWave shake being made. |
+| `images/shake.webp` | Home, the product | Portrait, about 900 px wide. A real ProWave shake in its cup. |
 | `images/athlete.webp` | Home, big photo | Landscape, about 1600 px wide. |
 | `video/swirl.mp4` + `images/swirl-poster.webp` | Home, our flavours | 1 to 2 seconds, landscape. |
 | `images/splash.webp` | Home, from source to shake | Landscape, about 1400 px wide. |

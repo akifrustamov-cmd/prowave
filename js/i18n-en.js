@@ -30,7 +30,8 @@ window.PROWAVE_EN = {
   'hero.fact2': 'and the shake is ready',
   'hero.fact3v': '+ creatine',
   'hero.fact3': 'with one tap, if you want it',
-  'hero.alt': 'A woman training on an air bike in a bright gym',
+  'hero.alt': 'A chocolate shake pouring into a glass from the ProWave machine',
+  'hero.flavours': 'All flavours',
 
   'gymband.p': 'We install the machine at our cost, look after it and share the revenue from every shake. We start with a three month free pilot.',
   'gymband.alt': 'A shake in a glass in the foreground, a man training on a rowing machine behind it',
@@ -48,7 +49,7 @@ window.PROWAVE_EN = {
   'how.tagCard': 'Card',
   'how.tagPhone': 'Phone',
 
-  'product.alt': 'A chocolate shake being poured into a glass',
+  'product.alt': 'A strawberry shake in a glass with fresh strawberries next to it',
   'product.badgeV': '~30 g',
   'product.badge': 'protein per shake',
   'product.eyebrow': 'The product',

@@ -44,11 +44,24 @@
 
   <!-- HERO -->
   <section class="hero">
-    <!-- SWAP: hero video. Replace video/hero.mp4 (3 to 8 seconds, no sound, under 3 MB) and its still image images/hero-poster.webp
-         with your own footage, for example a member taking a shake from the ProWave machine. -->
+    <!-- SWAP: hero video. Real shake footage (video/hero.mp4, still image images/hero-poster.webp) with a drawn ProWave dispenser on top,
+         so the shake pours from our machine. The coloured dots on the dispenser and the pill under it point to the flavours.
+         When you have real footage of your machine filling a cup (3 to 8 seconds, no sound, under 3 MB), replace the two files
+         and delete the "dispenser" block below. If the new clip shows another flavour, change the name in the "hero-flavour" link. -->
     <div class="hero-media media">
-      <img src="images/hero-poster.webp" alt="Kobieta trenuje na rowerku powietrznym w jasnej sali" data-i18n-attr="alt:hero.alt" width="900" height="720" fetchpriority="high" decoding="async">
+      <img src="images/hero-poster.webp" alt="Czekoladowy shake leje się do szklanki z automatu ProWave" data-i18n-attr="alt:hero.alt" width="720" height="960" fetchpriority="high" decoding="async">
       <video muted loop playsinline preload="none" data-src="video/hero.mp4" aria-hidden="true" tabindex="-1"></video>
+      <div class="dispenser" aria-hidden="true">
+        <img src="assets/logo.svg" alt="" width="113" height="15">
+        <span class="dispenser-dots" data-flavour-dots="vanilla-dream,chocolate-bomb,strawberry-kiss,pistachio-power,mango-smoothie,neon-night-drive" data-active="chocolate-bomb"></span>
+        <span class="dispenser-nozzle"></span>
+      </div>
+      <a class="hero-flavour" href="#smaki">
+        <i style="background:#6b3f24" aria-hidden="true"></i>
+        <strong>Chocolate Bomb</strong>
+        <span class="hero-flavour-more" data-i18n="hero.flavours">Wszystkie smaki</span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
     </div>
     <svg class="hero-waves" viewBox="0 0 123 57" aria-hidden="true">
       <g fill="currentColor" transform="translate(4 1) skewX(-10)">
@@ -183,11 +196,9 @@
   <!-- THE PRODUCT -->
   <section class="section" id="produkt">
     <div class="container split">
-      <!-- SWAP: video/pour.mp4 and images/pour-poster.webp. A close-up of the shake, portrait.
-           Best replaced with a clip of a real ProWave shake coming out of the machine. -->
-      <div class="photo photo--tall media reveal">
-        <img src="images/pour-poster.webp" alt="Czekoladowy shake nalewany do szklanki" data-i18n-attr="alt:product.alt" width="720" height="900" loading="lazy" decoding="async">
-        <video muted loop playsinline preload="none" data-src="video/pour.mp4" aria-hidden="true" tabindex="-1"></video>
+      <!-- SWAP: images/shake.webp. A close-up of the shake, portrait, about 900 px wide. Best replaced with a real ProWave shake in its cup. -->
+      <div class="photo photo--tall reveal">
+        <img src="images/shake.webp" alt="Truskawkowy shake w szklance, obok świeże truskawki" data-i18n-attr="alt:product.alt" width="900" height="1125" loading="lazy" decoding="async">
         <div class="photo-badge"><strong data-i18n="product.badgeV">~30 g</strong><span data-i18n="product.badge">białka w shake'u</span></div>
       </div>
       <div>
