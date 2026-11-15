@@ -3,13 +3,11 @@
   'use strict';
 
   /* ------------------------------------------------------------------
-     SETTINGS. Edit these three lines before going live.
+     SETTINGS. The form service address is not here: it is the action= of the form in partnership/index.html.
      ------------------------------------------------------------------ */
   var CONFIG = {
-    // Address shown on the page and used by the form until a form service is connected.
+    // Address shown on the page. The form falls back to it when no form service is connected or sending fails.
     contactEmail: 'contact.eu@wavesint.com',
-    // Formspree address, for example 'https://formspree.io/f/abcdwxyz'. Empty = the form opens the visitor's email app.
-    formEndpoint: '',
     // Calendly or another booking page. Empty = "Book a call" opens an email.
     bookingUrl: '',
     revenueShare: 0.15,
@@ -179,7 +177,8 @@
       var data = new FormData(form);
       if (data.get('_gotcha')) return; // spam bots fill the hidden field
 
-      if (!CONFIG.formEndpoint) {
+      var endpoint = form.getAttribute('action') || '';
+      if (!endpoint) {
         track('Form submitted', { method: 'email app' });
         window.location.href = buildMailto(data);
         setStatus(statusEl, messages().mailOpened, 'ok');
@@ -189,7 +188,9 @@
       var submit = $('button[type="submit"]', form);
       submit.disabled = true;
       setStatus(statusEl, messages().sending, '');
-      fetch(CONFIG.formEndpoint, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
+      // The subject line of the email the form service sends.
+      data.append('_subject', messages().mailSubject + ': ' + (data.get('gym') || ''));
+      fetch(endpoint, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
         .then(function (response) {
           if (!response.ok) throw new Error('Form service answered ' + response.status);
           form.reset();

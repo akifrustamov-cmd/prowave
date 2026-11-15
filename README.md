@@ -34,8 +34,9 @@ Open `js/main.js`. The settings are the first lines of the file.
 | Setting | What to put there |
 |---|---|
 | `contactEmail` | The address shown on the page. |
-| `formEndpoint` | Your Formspree address, for example `https://formspree.io/f/abcdwxyz`. While it is empty, the form opens the visitor's email app with the message filled in. |
 | `bookingUrl` | Your Calendly (or similar) link for "Book a call". While it is empty, the button opens an email. |
+
+The contact form sends each enquiry through Formspree (formspree.io), which emails it to you and keeps a copy under "Submissions". The address of the Formspree form is in `partnership/index.html` (search for `FORM SERVICE`). To change who receives the emails, change it in the Formspree dashboard, not on the site. If you remove the address, the form opens the visitor's email app instead.
 
 Then check these placeholders:
 
@@ -94,7 +95,7 @@ To count a click on another link, add `data-umami-event="Your name"` to it.
 
 ## After changing a style or script file
 
-Browsers keep style and script files for a while. So that a changed page never loads with old styles, every link to a `css` or `js` file in the two HTML files ends with `?v=3`. Whenever you change one of those files, raise that number in all of those links on both pages (search for `?v=`).
+Browsers keep style and script files for a while. So that a changed page never loads with old styles, every link to a `css` or `js` file in the two HTML files ends with `?v=4`. Whenever you change one of those files, raise that number in all of those links on both pages (search for `?v=`).
 
 ## Logo files
 
